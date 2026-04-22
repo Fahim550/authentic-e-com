@@ -81,7 +81,7 @@
 
         <button
           type="button"
-          class="absolute inset-y-0 left-0 flex -translate-x-full items-center gap-2 text-sm font-semibold text-[#df1a49] transition duration-300 group-hover:translate-x-0"
+          class="absolute inset-y-0 left-0 flex -translate-x-full items-center gap-2 text-sm font-semibold text-[#df1a49] transition duration-300 group-hover:translate-x-0 cursor-pointer"
         >
           <ShoppingCart class="h-4 w-4" />
           Add to cart
