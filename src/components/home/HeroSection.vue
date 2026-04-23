@@ -1,22 +1,19 @@
 <template>
   <div class="mx-auto bg-white flex flex-row w-full items-start gap-4 px-4 pt-5 sm:px-6 lg:px-14">
     <aside
-      class="h-fit w-full max-w-[280px] rounded-xl border border-gray-200 bg-white p-4 shadow-sm lg:h-[460px]"
+      class="h-fit w-full max-w-[280px] rounded-xl -pt-15 border border-gray-200 bg-white p-4 shadow-sm lg:h-[460px]"
     >
-      <h2 class="mb-3 text-sm font-semibold uppercase tracking-wider text-gray-500">
-        Shop By Category
-      </h2>
       <ul class="space-y-2">
         <li
           v-for="category in categories"
           :key="category"
-          class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100"
+          class="flex items-center gap-3 rounded-lg px-3 py-2 text-md font-extrabold text-gray-900 transition hover:bg-gray-100 hover:text-rose-500 cursor-pointer"
         >
-          <span
+          <!-- <span
             class="inline-flex h-5 w-5 items-center justify-center rounded-md bg-gray-100 text-xs font-semibold text-gray-500"
           >
             •
-          </span>
+          </span> -->
           <span>{{ category }}</span>
         </li>
       </ul>
@@ -86,15 +83,16 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 
 const categories = [
+  'Leptop',
   'Headphones',
-  'Fashion',
+  'Dekstop',
   'Mobile & Tablets',
-  'Cosmetics',
-  'Furniture',
-  'Handbags',
-  'Ornaments',
-  'Sneakers',
-  'Electronics',
+  'Network',
+  'Accessories',
+  'SoftWare',
+  'Camera & Security',
+  'Speaker & Audio',
+  'Printer',
   'Game & Console',
 ]
 
