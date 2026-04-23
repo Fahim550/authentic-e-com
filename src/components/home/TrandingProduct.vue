@@ -2,7 +2,7 @@
   <section class="mx-auto w-full rounded-2xl bg-white px-4 py-10 sm:px-6 lg:px-14">
     <div class="flex flex-wrap items-end justify-between gap-3 py-10">
       <div>
-        <h2 class="mt-1 text-2xl font-bold text-[#17172b] sm:text-3xl">Featured Products</h2>
+        <h2 class="mt-1 text-2xl font-bold text-[#17172b] sm:text-3xl">Tranding Products</h2>
       </div>
       <a href="#" class="text-sm font-semibold text-[#17172b] hover:underline">View More</a>
     </div>
