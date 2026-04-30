@@ -1,6 +1,127 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'tailwindcss';
 
 @import './base.css';
+
+/* Design System CSS Variables */
+:root {
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray: #999999;
+  --color-red: #d52245;
+  --color-primary: #1a1a2c;
+
+  --color-bg: var(--color-white);
+  --color-bg-dark: var(--color-black);
+
+  --color-text-primary: #1a1a2c;
+  --color-text-secondary: var(--color-gray);
+  --color-text-inverse: var(--color-white);
+
+  --color-border: #e5e7eb;
+  --color-border-strong: rgba(255, 255, 255, 0.5);
+
+  /* --color-primary: var(--color-primary); */
+  --color-primary-hover: #b81c3a;
+
+  --color-surface: var(--color-white);
+  --color-surface-raised: rgba(255, 255, 255, 0.4);
+  --color-surface-strong: var(--color-red);
+
+  --color-focus: rgba(58, 58, 255, 0.5);
+
+  /* Typography */
+  --font-family-primary: 'Albert Sans';
+  --font-family-stack:
+    'Albert Sans', 'Albert Sans Fallback', ui-sans-serif, system-ui, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-size-base: 16px;
+  --font-weight-base: 400;
+  --font-line-height-base: 24px;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 30px;
+  --font-size-4xl: 48px;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 6px;
+  --space-3: 8px;
+  --space-4: 10px;
+  --space-5: 12px;
+  --space-6: 16px;
+  --space-7: 20px;
+  --space-8: 24px;
+
+  /* Border Radius */
+  /* --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 33554400px; */
+
+  /* Shadows */
+  --shadow-1:
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
+  --shadow-2:
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+
+  /* Motion */
+  --motion-duration-instant: 150ms;
+  --motion-duration-fast: 200ms;
+  --motion-duration-normal: 300ms;
+}
+
+/* Tailwind CSS v4 Theme Configuration */
+@theme {
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-secondary: var(--color-text-secondary);
+  --color-accent: var(--color-surface-strong);
+
+  --color-background: var(--color-bg);
+  --color-foreground: var(--color-text-inverse);
+  --color-muted: var(--color-surface-raised);
+  --color-border: var(--color-border);
+  --color-border-strong: var(--color-border-strong);
+
+  /* --font-family-sans: var(--font-family-stack);
+  --font-family-primary: var(--font-family-primary);
+  --font-size-xs: var(--font-size-xs);
+  --font-size-sm: var(--font-size-sm);
+  --font-size-base: var(--font-size-base);
+  --font-size-lg: var(--font-size-lg);
+  --font-size-xl: var(--font-size-xl);
+  --font-size-2xl: var(--font-size-2xl);
+  --font-size-3xl: var(--font-size-3xl);
+  --font-size-4xl: var(--font-size-4xl);
+
+  --spacing-1: var(--space-1);
+  --spacing-2: var(--space-2);
+  --spacing-3: var(--space-3);
+  --spacing-4: var(--space-4);
+  --spacing-5: var(--space-5);
+  --spacing-6: var(--space-6);
+  --spacing-7: var(--space-7);
+  --spacing-8: var(--space-8);
+
+  --border-radius-sm: var(--radius-sm);
+  --border-radius-md: var(--radius-md);
+  --border-radius-lg: var(--radius-lg); */
+
+  --box-shadow-sm: var(--shadow-1);
+  --box-shadow: var(--shadow-2);
+
+  --animate-duration-fast: var(--motion-duration-fast);
+  --animate-duration-normal: var(--motion-duration-normal);
+}
 
 #app {
   width: 100%;

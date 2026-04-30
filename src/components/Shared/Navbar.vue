@@ -1,130 +1,230 @@
 <template>
-  <header class="bg-[#17172b] text-white">
+  <header class="bg-primary text-text-inverse">
     <div
-      class="py-2 px-4 sm:px-6 lg:px-13 flex flex-row justify-between items-center border-b-2 border-gray-800"
+      class="py-3 px-4 sm:px-6 lg:px-13 flex flex-row justify-between items-center border-b border-border-strong gap-2"
     >
-      <p class="text-gray-100 text-center text-md font-normal">
+      <p class="text-foreground text-sm font-normal truncate flex-1 min-w-0">
         Black Friday Shopping and Small Business Saturday Deals!!!
       </p>
-      <div class="flex justify-end items-center gap-3">
-        <button type="button" class="hover:text-white">EN</button>
-        <button type="button" class="hover:text-white">BDT</button>
+      <div class="flex items-center gap-3 shrink-0">
+        <button
+          type="button"
+          class="text-foreground text-sm hover:opacity-80 transition cursor-pointer"
+        >
+          EN
+        </button>
+        <button
+          type="button"
+          class="text-foreground text-sm hover:opacity-80 transition cursor-pointer"
+        >
+          BDT
+        </button>
+        <!-- <a href="#" class="text-foreground hover:text-blue-500 transition">
+          <Facebook class="h-4 w-4" />
+        </a>
+        <a href="#" class="text-foreground hover:text-blue-600 transition">
+          <Linkedin class="h-4 w-4" />
+        </a>
+        <a href="#" class="text-foreground hover:text-pink-500 transition">
+          <Instagram class="h-4 w-4" />
+        </a> -->
       </div>
     </div>
 
-    <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-13">
-      <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-        <RouterLink to="/" class="text-3xl font-extrabold text-white w-3/12">
+    <!-- Main Header -->
+    <div
+      :class="[
+        'mx-auto  text-center px-4 py-2 sm:px-6 lg:px-12 transition-all duration-400',
+        isScrolled
+          ? 'fixed top-0 left-0 right-0 z-[9999] bg-primary shadow-md py-3'
+          : 'relative py-4',
+      ]"
+    >
+      <div class="flex items-center justify-between gap-4">
+        <RouterLink
+          to="/"
+          class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-foreground shrink-0"
+        >
           Authentic
         </RouterLink>
 
-        <form class="max-w-2xl w-6/12">
-          <div class="flex items-center overflow-hidden rounded-md bg-white text-gray-600">
+        <form class="hidden md:flex flex-1 max-w-2xl" @submit.prevent>
+          <div
+            class="flex w-full items-center overflow-hidden rounded-md bg-background text-foreground border border-border"
+          >
             <input
               type="text"
               placeholder="Search Products..."
-              class="w-full bg-transparent px-4 py-3 text-sm outline-none"
+              class="w-full bg-transparent text-black px-4 py-2.5 text-sm outline-none"
             />
-            <button type="button" class="border-l border-gray-200 px-4 py-3">
-              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <circle cx="11" cy="11" r="7" stroke-width="1.8" />
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.8"
-                  d="m20 20-3.2-3.2"
-                />
-              </svg>
+            <button
+              type="submit"
+              class="border-l text-black border-gray-200 px-4 py-2.5 hover:bg-gray-100 transition cursor-pointer"
+            >
+              <Search class="h-5 w-5" />
             </button>
           </div>
         </form>
 
-        <div class="flex items-end justify-end gap-4 text-sm text-gray-200 w-3/12">
-          <button type="button" class="relative hover:text-white">
-            <span class="absolute -right-2 -top-2 rounded-full bg-red-500 px-1.5 text-[10px]"
+        <div class="flex items-center gap-3 sm:gap-4 text-gray-200 shrink-0">
+          <button
+            type="button"
+            class="md:hidden hover:text-white transition"
+            @click="searchOpen = !searchOpen"
+          >
+            <Search class="h-5 w-5" />
+          </button>
+
+          <button type="button" class="relative hover:text-white transition cursor-pointer">
+            <span
+              class="absolute -right-2 -top-2 rounded-full bg-red-500 px-1.5 text-[10px] leading-4"
               >3</span
             >
-            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.8"
-                d="M3 4h2l2.5 11h10.8l2-8H7.2"
-              />
-              <circle cx="10" cy="20" r="1.3" />
-              <circle cx="18" cy="20" r="1.3" />
-            </svg>
+            <ShoppingCart class="h-5 w-5" />
           </button>
-          <button type="button" class="relative hover:text-white">
-            <span class="absolute -right-2 -top-2 rounded-full bg-red-500 px-1.5 text-[10px]"
+
+          <button type="button" class="relative hover:text-white transition cursor-pointer">
+            <span
+              class="absolute -right-2 -top-2 rounded-full bg-red-500 px-1.5 text-[10px] leading-4"
               >0</span
             >
-            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.8"
-                d="m12 21-1.7-1.5C5.4 15.2 2 12.2 2 8.5A4.5 4.5 0 0 1 6.5 4C8.2 4 9.8 4.8 11 6.1 12.2 4.8 13.8 4 15.5 4A4.5 4.5 0 0 1 20 8.5c0 3.7-3.4 6.7-8.3 11L12 21Z"
-              />
-            </svg>
+            <Heart class="h-5 w-5" />
           </button>
-          <button type="button" class="hover:text-white">
-            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <circle cx="12" cy="8" r="4" stroke-width="1.8" />
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.8"
-                d="M4 21a8 8 0 0 1 16 0"
-              />
-            </svg>
+
+          <div class="hidden sm:flex items-center gap-2">
+            <button type="button" class="hover:text-white transition cursor-pointer">
+              <User class="h-5 w-5" />
+            </button>
+            <p class="leading-tight text-sm">
+              Welcome<br />
+              <span class="font-semibold text-white">Sign In / Register</span>
+            </p>
+          </div>
+
+          <button
+            type="button"
+            class="lg:hidden hover:text-white transition ml-1"
+            @click="mobileMenuOpen = !mobileMenuOpen"
+            aria-label="Toggle menu"
+          >
+            <X v-if="mobileMenuOpen" class="h-6 w-6" />
+            <Menu v-else class="h-6 w-6" />
           </button>
-          <p class="leading-tight">
-            Welcome<br />
-            <span class="font-semibold text-white">Sign In / Register</span>
-          </p>
         </div>
       </div>
+
+      <!-- Mobile Search -->
+      <Transition name="slide-down">
+        <div v-if="searchOpen" class="mt-3 md:hidden">
+          <div
+            class="flex items-center overflow-hidden rounded-md bg-background text-foreground border border-border"
+          >
+            <input
+              type="text"
+              placeholder="Search Products..."
+              class="w-full text-black bg-transparent px-4 py-2.5 text-sm outline-none"
+              autofocus
+            />
+            <button type="button" class="border-l text-black border-gray-200 px-4 py-2.5">
+              <Search class="h-5 w-5" />
+            </button>
+          </div>
+        </div>
+      </Transition>
     </div>
 
-    <div
-      class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:px-6 lg:px-13 lg:flex-row lg:items-center lg:gap-8"
-    >
-      <button
-        type="button"
-        class="inline-flex items-center gap-3 rounded-md bg-white px-4 py-2 font-medium w-[280px] text-gray-900 cursor-pointer"
-        @click="emit('toggle-categories')"
-      >
-        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.8"
-            d="M4 7h16M4 12h16M4 17h16"
-          />
-        </svg>
-        All Categories
-      </button>
-
-      <nav class="flex flex-wrap items-center gap-5 text-sm font-medium">
-        <RouterLink
-          v-for="link in navLinks"
-          :key="link.name"
-          :to="link.to"
-          class="text-gray-200 transition hover:text-white"
-          active-class="text-red-500"
+    <!-- Nav Bar -->
+    <div class="mx-auto max-w-7xl px-4 pt-3 sm:px-6 lg:px-13">
+      <!-- Desktop Nav -->
+      <div class="md:flex items-center gap-4">
+        <button
+          type="button"
+          class="inline-flex items-center gap-3 rounded-t-xl rounded-b-none bg-white px-4 py-2 font-medium w-72 text-gray-900 cursor-pointer hover:bg-gray-100 transition shrink-0"
+          @click="(toggleSidebar(), (mobileMenuOpen = false))"
         >
-          {{ link.name }}
-        </RouterLink>
-      </nav>
+          <LayoutGrid class="h-4 w-4" />
+          All Categories
+        </button>
+
+        <Transition name="fade">
+          <div v-if="sidebarOpen" class="lg:hidden absolute z-[9999] mt-2">
+            <div
+              class="w-72 bg-white rounded-b-xl shadow-2xl border border-gray-200 overflow-hidden"
+            >
+              <div class="h-full overflow-y-auto p-3">
+                <CategoryList @select="closeSidebar" />
+              </div>
+            </div>
+          </div>
+        </Transition>
+
+        <nav class="hidden md:flex flex-wrap items-center gap-5 lg:gap-6 text-sm font-bold">
+          <RouterLink
+            v-for="link in navLinks"
+            :key="link.name"
+            :to="link.to"
+            class="text-gray-200 transition max-w-12 lg:max-w-none text-md font-bold hover:text-white"
+            active-class="text-red-400"
+          >
+            {{ link.name }}
+          </RouterLink>
+        </nav>
+      </div>
+
+      <!-- Mobile Nav Dropdown -->
+      <Transition name="slide-down">
+        <div v-if="mobileMenuOpen" class="lg:hidden flex flex-col gap-1 pt-1">
+          <div class="sm:hidden flex items-center gap-2 py-2 border-b border-white/10 mb-1">
+            <User class="h-4 w-4 text-gray-300" />
+            <span class="text-sm text-gray-200"
+              >Welcome — <span class="font-semibold text-white">Sign In / Register</span></span
+            >
+          </div>
+
+          <nav class="flex flex-col">
+            <RouterLink
+              v-for="link in navLinks"
+              :key="link.name"
+              :to="link.to"
+              class="text-gray-200 hover:text-white transition py-2.5 border-b border-white/10 text-md font-semibold"
+              active-class="text-red-400"
+              @click="mobileMenuOpen = false"
+            >
+              {{ link.name }}
+            </RouterLink>
+          </nav>
+        </div>
+      </Transition>
     </div>
   </header>
 </template>
 
 <script setup>
+import CategoryList from '@/components/Shared/CategoryList.vue'
+import { useSidebar } from '@/composables/useSidebar'
+import { Heart, LayoutGrid, Menu, Search, ShoppingCart, User, X } from '@lucide/vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 
-const emit = defineEmits(['toggle-categories'])
+const { toggleSidebar } = useSidebar()
+const { sidebarOpen, closeSidebar } = useSidebar()
+
+const mobileMenuOpen = ref(false)
+const searchOpen = ref(false)
+
+const isScrolled = ref(false)
+
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 50
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 
 const navLinks = [
   { name: 'Home', to: '/' },
@@ -132,7 +232,19 @@ const navLinks = [
   { name: 'Features', to: '/features' },
   { name: 'New Arrivals', to: '/new-arrivals' },
   { name: 'Blogs', to: '/blogs' },
-  { name: 'About Us', to: '/about' },
-  { name: 'Contact Us', to: '/contact' },
+  { name: 'About ', to: '/about' },
+  { name: 'Contact ', to: '/contact' },
 ]
 </script>
+
+<style scoped>
+.slide-down-enter-active,
+.slide-down-leave-active {
+  transition: all 0.2s ease;
+}
+.slide-down-enter-from,
+.slide-down-leave-to {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+</style>
