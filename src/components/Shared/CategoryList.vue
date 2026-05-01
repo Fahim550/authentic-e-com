@@ -3,12 +3,12 @@
     <li
       v-for="category in categories"
       :key="category.name"
-      class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-semibold text-gray-800 transition-all hover:bg-rose-50 hover:text-rose-500 cursor-pointer group"
+      class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-md font-semibold text-primary transition-all hover:bg-rose-50 hover:text-accent cursor-pointer group"
       @click="emit('select', category.name)"
     >
       <component
         :is="category.icon"
-        class="h-4 w-4 text-gray-400 group-hover:text-rose-400 transition-colors shrink-0"
+        class="h-5 w-5 text-primary group-hover:text-accent transition-colors shrink-0"
       />
       <span>{{ category.name }}</span>
     </li>

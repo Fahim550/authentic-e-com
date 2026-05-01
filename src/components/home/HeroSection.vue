@@ -10,7 +10,7 @@
       </aside>
 
       <!-- Hero Slider -->
-      <div class="pt-8 w-full">
+      <div class="pt-6 w-full">
         <section
           class="relative h-[310px] w-full overflow-hidden rounded-2xl bg-gray-100 sm:h-[360px] lg:h-[460px]"
         >
@@ -39,7 +39,7 @@
                 </h2>
                 <p class="hero-item hero-item-3 pt-4 pb-5 text-lg font-medium sm:text-2xl">
                   {{ saleText.label }}
-                  <span class="ml-1 text-xl font-bold sm:text-3xl text-yellow-300">{{
+                  <span class="ml-1 text-xl font-bold sm:text-3xl text-gray-100">{{
                     saleText.value
                   }}</span>
                 </p>
