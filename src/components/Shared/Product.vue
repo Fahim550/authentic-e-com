@@ -27,7 +27,7 @@
             aria-label="Add to wishlist"
             title="Wishlist"
           >
-            <Heart class="h-4 w-4" />
+            <Heart class="h-6 w-6" />
           </button>
         </Tooltip>
 
@@ -37,7 +37,7 @@
             aria-label="Quick View"
             title="Quick View"
           >
-            <Eye class="h-4 w-4" />
+            <Eye class="h-6 w-6" />
           </button>
         </Tooltip>
 
@@ -48,7 +48,7 @@
             aria-label="Compare"
             title="Compare"
           >
-            <GitCompareArrows class="h-4 w-4" />
+            <GitCompareArrows class="h-6 w-6" />
           </button>
         </Tooltip>
       </div>
@@ -73,17 +73,17 @@
         <div
           class="absolute inset-0 flex items-center gap-2 transition duration-300 group-hover:-translate-x-full group-hover:opacity-0"
         >
-          <span class="text-lg font-bold text-[#17172b]">${{ price.toFixed(2) }}</span>
-          <span v-if="oldPrice" class="text-sm text-gray-400 line-through"
+          <span class="text-lg font-bold text-primary">${{ price.toFixed(2) }}</span>
+          <span v-if="oldPrice" class="text-sm text-accent/80 line-through"
             >${{ oldPrice.toFixed(2) }}</span
           >
         </div>
 
         <button
           type="button"
-          class="absolute inset-y-0 left-0 flex -translate-x-full items-center gap-2 text-sm font-semibold text-[#df1a49] transition duration-300 group-hover:translate-x-0 cursor-pointer"
+          class="absolute inset-y-0 left-0 flex -translate-x-full items-center gap-2 text-sm font-semibold text-accent transition duration-300 group-hover:translate-x-0 cursor-pointer"
         >
-          <ShoppingCart class="h-4 w-4" />
+          <ShoppingCart class="h-6 w-6" />
           Add to cart
         </button>
       </div>
@@ -92,9 +92,9 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
-import { Eye, GitCompareArrows, Heart, ShoppingCart, Star } from '@lucide/vue'
 import Tooltip from '@/ui/Tooltip.vue'
+import { Eye, GitCompareArrows, Heart, ShoppingCart, Star } from '@lucide/vue'
+import { computed } from 'vue'
 
 const props = defineProps({
   title: {

@@ -135,7 +135,7 @@
     </div>
 
     <!-- Nav Bar -->
-    <div class="mx-auto max-w-7xl px-4 pt-3 sm:px-6 lg:px-13">
+    <div class="max-w-7xl px-4 pt-3 sm:px-6 lg:px-13">
       <!-- Desktop Nav -->
       <div class="relative md:flex items-center gap-4">
         <div>
@@ -153,6 +153,11 @@
               <div
                 class="w-64 lg:w-72 bg-white rounded-b-xl shadow-2xl border border-gray-200 overflow-hidden"
               >
+                <div
+                  v-if="sidebarOpen"
+                  class="lg:hidden fixed inset-0 z-[9998]"
+                  @click="closeSidebar"
+                />
                 <div class="h-full overflow-y-auto p-3">
                   <CategoryList @select="closeSidebar" />
                 </div>

@@ -2,7 +2,9 @@
   <section class="rounded-2xl bg-white mx-auto p-4 sm:p-20 w-full">
     <h2 class="text-center text-xl font-bold text-[#17172b] sm:text-2xl">Featured Categories</h2>
 
-    <div class="mt-4 pt-10 flex gap-5 overflow-x-auto pb-2 sm:grid sm:grid-cols-3 sm:gap-6 sm:overflow-visible md:grid-cols-4 lg:grid-cols-6">
+    <div
+      class="mt-4 pt-10 flex gap-5 overflow-x-auto pb-2 sm:grid sm:grid-cols-3 sm:gap-6 sm:overflow-visible md:grid-cols-4 lg:grid-cols-6"
+    >
       <article
         v-for="category in categories"
         :key="category.name"
@@ -50,5 +52,5 @@ const categories = [
     name: 'Handbags',
     image: 'https://cdn-icons-png.flaticon.com/512/2331/2331966.png',
   },
-];
+]
 </script>

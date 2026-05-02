@@ -1,15 +1,17 @@
 <template>
-  <section class="space-y-5">
+  <section class="">
     <HeroSection />
     <Categories />
     <FeatureProduct />
     <TrandingProduct />
+    <SpecialOfferBanner />
   </section>
 </template>
 
 <script setup>
-import HeroSection from '../components/home/HeroSection.vue'
+import TrandingProduct from '@/components/home/TrandingProduct.vue'
 import Categories from '../components/home/Categories.vue'
 import FeatureProduct from '../components/home/FeatureProduct.vue'
-import TrandingProduct from '@/components/home/TrandingProduct.vue'
+import HeroSection from '../components/home/HeroSection.vue'
+import SpecialOfferBanner from '../components/home/SpecialOfferBanner.vue'
 </script>

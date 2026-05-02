@@ -1,5 +1,5 @@
 <template>
-  <section class="mx-auto w-full rounded-2xl bg-white px-4 py-10 sm:px-6 lg:px-14">
+  <section class="mx-auto w-full rounded-2xl bg-white px-4 py-6 sm:px-6 lg:px-14">
     <div class="flex flex-wrap items-end justify-between gap-3 py-10">
       <div>
         <h2 class="mt-1 text-2xl font-bold text-[#17172b] sm:text-3xl">Tranding Products</h2>
@@ -50,10 +50,10 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
-import emblaCarouselVue from 'embla-carousel-vue'
-import Product from '../Shared/Product.vue'
 import { ChevronLeft, ChevronRight } from '@lucide/vue'
+import emblaCarouselVue from 'embla-carousel-vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
+import Product from '../Shared/Product.vue'
 
 const featuredProducts = [
   {
