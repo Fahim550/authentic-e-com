@@ -1,6 +1,6 @@
 <template>
-  <section class="rounded-2xl bg-white mx-auto p-4 sm:p-20 w-full">
-    <h2 class="text-center text-xl font-bold text-[#17172b] sm:text-2xl">Featured Categories</h2>
+  <section class="rounded-2xl bg-white mx-auto p-4 sm:px-12 py-15 w-full">
+    <h2 class="text-center text-xl font-bold text-primary sm:text-2xl">Featured Categories</h2>
 
     <div
       class="mt-4 pt-10 flex gap-5 overflow-x-auto pb-2 sm:grid sm:grid-cols-3 sm:gap-6 sm:overflow-visible md:grid-cols-4 lg:grid-cols-6"
@@ -20,7 +20,7 @@
             loading="lazy"
           />
         </div>
-        <p class="pt-3 text-sm font-medium text-gray-800">{{ category.name }}</p>
+        <p class="pt-4 text-sm font-medium text-primary">{{ category.name }}</p>
       </article>
     </div>
   </section>

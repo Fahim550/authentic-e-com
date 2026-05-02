@@ -1,10 +1,10 @@
 <template>
   <section class="mx-auto w-full rounded-2xl bg-white px-4 py-10 sm:px-6 lg:px-14">
-    <div class="flex flex-wrap items-end justify-between gap-3 py-10">
+    <div class="flex flex-wrap items-end justify-between gap-3 pb-4">
       <div>
-        <h2 class="mt-1 text-2xl font-bold text-[#17172b] sm:text-3xl">Featured Products</h2>
+        <h2 class="mt-1 text-2xl font-bold text-primary sm:text-3xl">Featured Products</h2>
       </div>
-      <a href="#" class="text-sm font-semibold text-[#17172b] hover:underline">View More</a>
+      <a href="#" class="text-sm font-semibold text-primary hover:underline">View More</a>
     </div>
 
     <div class="relative mt-8">
@@ -21,7 +21,7 @@
             :old-price="item.oldPrice"
             :rating="item.rating"
             :badge="item.badge"
-            class="min-w-0 flex-[0_0_100%] sm:flex-[0_0_49%] lg:flex-[0_0_24.2%]"
+            class="min-w-0 flex-[0_0_100%] sm:flex-[0_0_49%] lg:flex-[0_0_24.5%]"
           />
         </div>
       </div>
@@ -30,30 +30,30 @@
       <button
         @click="scrollPrev"
         :disabled="!canScrollPrev"
-        class="absolute left-0 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-lg border border-gray-800 text-[#17172b] transition hover:bg-[#17172b] hover:text-white disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+        class="absolute left-0 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-lg border border-gray-800 text-primary transition hover:bg-primary hover:text-white disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
         aria-label="Previous"
       >
-        <ChevronLeft class="h-5 w-5" />
+        <ChevronLeft class="h-6 w-6" />
       </button>
 
       <!-- Next Button -->
       <button
         @click="scrollNext"
         :disabled="!canScrollNext"
-        class="absolute right-0 top-1/2 z-10 translate-x-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-lg border border-gray-800 text-[#17172b] transition hover:bg-[#17172b] hover:text-white disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+        class="absolute right-0 top-1/2 z-10 translate-x-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-lg border border-gray-800 text-primary transition hover:bg-primary hover:text-white disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
         aria-label="Next"
       >
-        <ChevronRight class="h-5 w-5" />
+        <ChevronRight class="h-6 w-6" />
       </button>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
-import emblaCarouselVue from 'embla-carousel-vue'
-import Product from '../Shared/Product.vue'
 import { ChevronLeft, ChevronRight } from '@lucide/vue'
+import emblaCarouselVue from 'embla-carousel-vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
+import Product from '../Shared/Product.vue'
 
 const featuredProducts = [
   {
