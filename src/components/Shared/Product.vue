@@ -5,7 +5,7 @@
     <div class="relative overflow-hidden bg-gray-50">
       <span
         v-if="badge"
-        class="absolute left-3 top-3 z-10 rounded-full bg-[#17172b] px-3 py-1 text-xs font-semibold text-white"
+        class="absolute left-3 top-3 z-10 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-white"
       >
         {{ badge }}
       </span>
@@ -23,20 +23,20 @@
         <Tooltip text="Wishlist" placement="left">
           <button
             type="button"
-            class="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-gray-600 shadow hover:bg-[#17172b] hover:text-white cursor-pointer"
+            class="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-gray-600 shadow hover:bg-primary hover:text-white cursor-pointer"
             aria-label="Add to wishlist"
-            title="Wishlist"
           >
+            <!-- title="Wishlist" -->
             <Heart class="h-6 w-6" />
           </button>
         </Tooltip>
 
         <Tooltip text="Quick view" placement="left">
           <button
-            class="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-gray-600 shadow hover:bg-[#17172b] hover:text-white cursor-pointer"
+            class="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-gray-600 shadow hover:bg-primary hover:text-white cursor-pointer"
             aria-label="Quick View"
-            title="Quick View"
           >
+            <!-- title="Quick View" -->
             <Eye class="h-6 w-6" />
           </button>
         </Tooltip>
@@ -44,10 +44,10 @@
         <Tooltip text="Compare" placement="left">
           <button
             type="button"
-            class="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-gray-600 shadow hover:bg-[#17172b] hover:text-white cursor-pointer"
+            class="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-gray-600 shadow hover:bg-primary hover:text-white cursor-pointer"
             aria-label="Compare"
-            title="Compare"
           >
+            <!-- title="Compare" -->
             <GitCompareArrows class="h-6 w-6" />
           </button>
         </Tooltip>
@@ -56,7 +56,7 @@
 
     <div class="flex flex-1 flex-col p-4">
       <p class="text-xs font-medium uppercase tracking-wide text-gray-500">{{ category }}</p>
-      <h3 class="mt-1 line-clamp-2 text-base font-semibold text-[#17172b]">{{ title }}</h3>
+      <h3 class="mt-1 line-clamp-2 text-base font-semibold text-primary">{{ title }}</h3>
 
       <div class="mt-2 flex items-center gap-1 text-sm">
         <Star

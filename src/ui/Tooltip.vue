@@ -5,18 +5,18 @@
     <Transition :name="`tt-${placement}`">
       <span
         v-if="visible"
-        class="absolute z-50 whitespace-nowrap rounded-md bg-[#17172b] px-4 py-1.5 text-[13px] font-normal text-slate-200 pointer-events-none"
+        class="absolute z-50 whitespace-nowrap rounded-md bg-primary px-4 py-1.5 text-xs font-semibold text-slate-200 pointer-events-none"
         :class="placementClasses"
       >
         {{ text }}
-        <span class="absolute h-[7px] w-[7px] rotate-45 bg-[#17172b]" :class="arrowClasses" />
+        <span class="absolute h-[7px] w-[7px] rotate-45 bg-primary" :class="arrowClasses" />
       </span>
     </Transition>
   </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { computed, ref } from 'vue'
 
 const props = defineProps({
   text: { type: String, required: true },
