@@ -8,6 +8,8 @@
     <NewArrivalsProduct />
     <BestDeals />
     <BeComeSeller />
+    <StockClearence />
+    <ShopByBrand />
   </section>
 </template>
 
@@ -15,6 +17,8 @@
 import BeComeSeller from '@/components/home/BeComeSeller.vue'
 import BestDeals from '@/components/home/BestDeals.vue'
 import NewArrivalsProduct from '@/components/home/NewArrivalsProduct.vue'
+import ShopByBrand from '@/components/home/ShopByBrand.vue'
+import StockClearence from '@/components/home/StockClearence.vue'
 import TrandingProduct from '@/components/home/TrandingProduct.vue'
 import Categories from '../components/home/Categories.vue'
 import FeatureProduct from '../components/home/FeatureProduct.vue'
