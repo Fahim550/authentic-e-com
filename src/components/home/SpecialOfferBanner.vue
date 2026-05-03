@@ -1,13 +1,13 @@
 <template>
-  <div class="flex w-full gap-6 bg-white px-4 py-0 sm:px-6 lg:px-14">
+  <div class="flex flex-col lg:flex-row w-full gap-6 bg-white px-4 py-0 sm:px-6 lg:px-14">
     <div
-      class="w-2/3 flex gap-4 rounded-2xl overflow-hidden relative shadow-md"
+      class="w-full lg:w-2/3 flex gap-4 rounded-2xl overflow-hidden relative shadow-md"
       v-for="(banner, index) in banners"
       :key="banner.id"
       v-show="currentIndex === index"
     >
       <div
-        class="relative z-10 p-18 text-primary max-w-md w-1/2 space-y-3 flex flex-col gap-5 justify-center"
+        class="absolute md:relative z-10 p-10 xl:p-18 text-primary w-full lg:w-1/2 space-y-3 flex flex-col gap-5 justify-center"
       >
         <p class="text-md uppercase tracking-wider font-semibold text-primary/50">
           {{ banner.subtitle }}
@@ -42,17 +42,19 @@
         </div>
       </div>
       <div
-        class="relative rounded-2xl overflow-hidden bg-gray-100 h-[420px] w-1/2 p-5"
+        class="relative rounded-2xl overflow-hidden bg-gray-100 h-[420px] w-full lg:w-1/2 md:p-5"
         :style="{
           backgroundImage: `url(${banner.image})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }"
-      ></div>
+      >
+        <div class="md:hidden absolute w-full h-full bg-white/90 backdrop-blur-xl" />
+      </div>
     </div>
 
     <div
-      class="w-1/3 rounded-2xl p-8 flex flex-col justify-between shadow-md overflow-hidden relative min-h-[420px]"
+      class="w-full lg:w-1/3 rounded-2xl p-8 flex flex-col justify-between shadow-md overflow-hidden relative min-h-[420px]"
     >
       <div
         class="absolute bottom-0 left-0 right-0 h-2/4"
@@ -77,7 +79,7 @@
         </p>
 
         <!-- Countdown -->
-        <div class="flex justify-center gap-7 pt-7">
+        <div class="flex justify-center gap-5 xl:gap-7 pt-7">
           <div v-for="(item, i) in countdown" :key="i" class="text-center">
             <div
               class="bg-primary text-white w-14 h-14 flex items-center justify-center rounded-full font-bold"

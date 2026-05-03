@@ -149,13 +149,13 @@
           </button>
 
           <Transition name="fade">
-            <div v-if="sidebarOpen" class="lg:hidden absolute z-[9999] mt-2">
+            <div v-if="sidebarOpen" class="lg:hidden absolute z-[10001]">
               <div
                 class="w-64 lg:w-72 bg-white rounded-b-xl shadow-2xl border border-gray-200 overflow-hidden"
               >
                 <div
                   v-if="sidebarOpen"
-                  class="lg:hidden fixed inset-0 z-[9998]"
+                  class="lg:hidden fixed inset-0 z-[10000]"
                   @click="closeSidebar"
                 />
                 <div class="h-full overflow-y-auto p-3">
@@ -191,7 +191,14 @@
             >
           </div>
 
-          <nav class="flex flex-col">
+          <nav
+            :class="[
+              'flex flex-col',
+              isScrolled
+                ? 'fixed top-13 sm:top-19 left-0 right-0 z-[9998] bg-primary px-4 transition-all duration-300'
+                : 'relative',
+            ]"
+          >
             <RouterLink
               v-for="link in navLinks"
               :key="link.name"

@@ -1,5 +1,5 @@
 <template>
-  <section class="px-14 py-10 bg-white">
+  <section class="px-4 py-6 sm:px-6 lg:px-14 bg-white">
     <div class="relative overflow-hidden rounded-2xl bg-primary p-10">
       <!-- <div class="absolute inset-0 pointer-events-none">
         <div
@@ -54,16 +54,16 @@
         </p>
 
         <!-- Buttons -->
-        <div class="flex items-center gap-3">
+        <div class="flex flex-col lg:flex-row w-full items-center gap-3">
           <button
-            class="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white text-sm font-semibold px-7 py-2.5 rounded-full transition-colors duration-200 cursor-pointer"
+            class="inline-flex items-center w-full text-center justify-center gap-2 bg-accent hover:bg-accent/90 text-white text-sm font-semibold px-7 py-2.5 rounded-full transition-colors duration-200 cursor-pointer"
           >
             Apply Now
             <ArrowUpRight class="w-6 h-6" />
           </button>
 
           <button
-            class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white text-sm font-medium px-7 py-2.5 rounded-full border border-white/15 transition-colors duration-200 cursor-pointer"
+            class="inline-flex items-center w-full text-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white text-sm font-medium px-7 py-2.5 rounded-full border border-white/15 transition-colors duration-200 cursor-pointer"
           >
             Learn More
           </button>
